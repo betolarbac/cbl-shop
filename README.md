@@ -1,69 +1,94 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Desafio Vitrine de Produtos
 
-Currently, two official plugins are available:
+Este projeto é uma aplicação web desenvolvida como parte de um desafio técnico para uma vaga de Frontend Júnior. A aplicação simula uma vitrine de produtos, consumindo dados de uma API pública.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**[Link para o Deploy na Vercel](https://cblshop.vercel.app/)** 
 
-## Expanding the ESLint configuration
+## ✨ Funcionalidades
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+  * **Vitrine de Produtos:** Exibe uma lista de produtos obtidos através da [Fake Store API](https://fakestoreapi.com/).
+  * **Páginação:** Navegue facilmente entre as páginas de produtos para uma melhor experiência do usuário.
+  * **Filtro por Categoria:** Filtre os produtos por categoria para encontrar o que você procura com mais facilidade.
+  * **Design Responsivo:** A interface se adapta a diferentes tamanhos de tela, desde dispositivos móveis até desktops.
+  * **Componentização com React:** O código é estruturado em componentes reutilizáveis, seguindo as melhores práticas do React.
+  * **Hooks Customizados:** A lógica de busca de dados e paginação é abstraída em hooks customizados para um código mais limpo e de fácil manutenção.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Tecnologias Utilizadas
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+  * **[React](https://reactjs.org/)**
+  * **[Vite](https://vitejs.dev/)**
+  * **[TypeScript](https://www.typescriptlang.org/)**
+  * **[Tailwind CSS](https://tailwindcss.com/)**
+  * **[React Router](https://reactrouter.com/)**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## ⚙️ Como Executar o Projeto
+
+Siga os passos abaixo para executar o projeto em seu ambiente de desenvolvimento local.
+
+### Pré-requisitos
+
+  * [Node.js](https://nodejs.org/en/) (versão 16 ou superior)
+  * [npm](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/)
+
+### Passos
+
+1.  **Clone o repositório:**
+
+    ```bash
+    git clone https://github.com/betolarbac/cbl-shop
+    ```
+
+2.  **Navegue até o diretório do projeto:**
+
+    ```bash
+    cd cbl-shop
+    ```
+
+3.  **Instale as dependências:**
+
+    ```bash
+    npm install
+    ```
+
+    *ou*
+
+    ```bash
+    yarn install
+    ```
+
+4.  **Inicie o servidor de desenvolvimento:**
+
+    ```bash
+    npm run dev
+    ```
+
+    *ou*
+
+    ```bash
+    yarn dev
+    ```
+
+5.  **Abra o navegador:**
+
+    Acesse `http://localhost:5173` (ou a porta indicada no seu terminal) para ver a aplicação em funcionamento.
+
+## 📂 Estrutura do Projeto
+
+O projeto está organizado da seguinte forma para facilitar a manutenção e escalabilidade:
+
+```
+src/
+├── assets/         # Imagens e outros arquivos estáticos
+├── components/     # Componentes React reutilizáveis (ProductCard, Banner, etc.)
+├── hooks/          # Hooks customizados (useProducts, usePagination)
+├── interfaces/     # Definições de tipos e interfaces TypeScript (Product.ts)
+├── pages/          # Componentes de página (Home, Offers)
+├── App.tsx         # Componente principal que define as rotas
+├── main.tsx        # Ponto de entrada da aplicação
+└── index.css       # Estilos globais e importações do Tailwind
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📦 Deploy
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+O deploy desta aplicação foi realizado na **Vercel**.
