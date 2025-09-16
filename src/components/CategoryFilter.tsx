@@ -9,7 +9,7 @@ interface CategoryFilterProps {
       <div className="flex justify-center mb-8 flex-wrap">
         <button
           onClick={() => onSelectCategory('')}
-          className={`px-4 py-2 mx-2 mb-2 rounded-lg ${selectedCategory === '' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
+          className={`px-4 py-2 mx-2 mb-2 rounded-lg cursor-pointer ${selectedCategory === '' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
         >
           Todos
         </button>
@@ -17,7 +17,7 @@ interface CategoryFilterProps {
           <button
             key={category}
             onClick={() => onSelectCategory(category)}
-            className={`px-4 py-2 mx-2 mb-2 rounded-lg ${selectedCategory === category ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
+            className={`px-4 py-2 mx-2 mb-2 rounded-lg cursor-pointer ${selectedCategory === category ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
           >
             {category}
           </button>
